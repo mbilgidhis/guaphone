@@ -27,10 +27,8 @@ GuaApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, 
 		.state('menu.biota', {url: '/info/biota', views: {'menuContent': {templateUrl: 'view/biotaView.html', controller: 'BiotaCtrl'} }  })
 		.state('menu.biotaView', {url:'/info/biota/:id', views:{'menuContent':{templateUrl: 'view/fullBiotaView.html', controller:'FullBiotaCtrl'} } })
 
-		//.state('menu.ornamen', {url: '/info/ornamen', views: {'menuContent': {templateUrl: 'view/dummyView.html', controller: 'DummyCtrl'} }  })
-
-
-		.state('menu.perarea', {url: '/area/:id', views: {'menuContent': {templateUrl: 'view/GuaView.html', controller: 'GuaCtrl'} }  })
+		.state('menu.perArea', {url:'/area/:id', views:{'menuContent':{templateUrl: 'view/perArea.html', controller:'PerAreaCtrl'} } })
+		.state('menu.listarea',{url: '/area/:id1/:id', views: {'menuContent': {templateUrl: 'view/GuaView_.html', controller: 'GuaViewCtrl'} } } )
 
 		.state('menu.showsearch', {url: '/search/:id', views: {'menuContent': {templateUrl: 'view/GuaView_.html', controller: 'GuaViewCtrl'} }  })
 		.state('menu.showlocation', {url: '/home/:id', views: {'menuContent': {templateUrl: 'view/GuaView_.html', controller: 'GuaViewCtrl'} }  })
@@ -464,12 +462,20 @@ GuaApp.controller('AreaCtrl', function($scope, $http, $ionicLoading, $timeout){
 
 });
 
-GuaApp.controller('PerAreaCtrl', function($scope, $stateParams, $http, $window){
-	
-	var id = $stateParams.id;
+GuaApp.controller('PerAreaCtrl', function($scope, $stateParams, $http, $window, $ionicLoading, $timeout){
+	$scope.showLoading = function(){
+		$scope.loadingIndicator = $ionicLoading.show({
+			content: "Loading",
+			animation: "fade-in",
+			showBackdrop: true,
+			maxWidth: 200,
+			showDelay: 100
+		});
+	};
 
 	$scope.perprovinces = [];
 
+	var id = $stateParams.id;
 	var lat = $window.lat, lng = $window.lng;
 	var currentLocation = new google.maps.LatLng(lat, lng);
 
@@ -481,6 +487,9 @@ GuaApp.controller('PerAreaCtrl', function($scope, $stateParams, $http, $window){
 		method:'POST'
 	}).success(function(data){
 		$scope.perprovinces = data.data;
+		$timeout(function(){
+			$scope.loadingIndicator.hide();
+		}, 100);
 	}).error(function(){
 		console.log("gagal");
 	});
