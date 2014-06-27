@@ -137,6 +137,10 @@ hr{
 	padding:10px;
 }
 
+#badgeJarak{
+	color: #4ACFDD !important;
+}
+
 /*tambahan untuk infobox */
 .custom-info-window{
     background: rgba(74,207,221,0.7);
