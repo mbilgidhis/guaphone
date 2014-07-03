@@ -10,13 +10,6 @@
 						<!-- Default Picture / Static Map-->
 						<img ng-src="http://maps.googleapis.com/maps/api/staticmap?&key=AIzaSyBvkEaVRacUN8MucCU6B4YQGAT18KCmXnY&sensor=false&center={{coor.latitude}},{{coor.longitude}}&zoom=11&scale=1x&size=640x300&markers={{coor.latitude}},{{coor.longitude}}" ng-repeat="coor in gua.coordinates" ng-show="gua.images == 0" style="width:auto !important;height:410px;text-align:center;">
 
-						<!-- Slide picture -->
-<!-- 				        <ul rn-carousel rn-carousel-control class="image">
-				            <li ng-repeat="image in gua.images">
-				                <img src="{{image.file}}">
-				            </li>
-				        </ul> -->	
-
 				        <!-- masih salah -->
 				        <div ng-hide="file == 0" >
 							<img ng-src="{{file}}" alt="{{gua.name}}" />
@@ -29,16 +22,16 @@
 
 			<div id="guaInfoDetails">
 				<!-- Split 2 Top -->
-				<div class="row responsive-sm">
+				<div class="row">
 					<!-- Difficulty Level -->
-					<div class="col col-50">
+					<div class="col">
 						<div id="guaType">
 							<!-- <p>{{gua.type.name}} <span ng-show="gua.type.name == 0"> - </span> | {{gua.difficulty.name}} <span ng-show="gua.difficulty.name == 0"> - </span></p> -->
 							<p><span ng-show="gua.type.name">{{gua.type.name}}</span><span ng-show="gua.type.name && gua.difficulty.name"> | </span><span ng-show="gua.difficulty.name">{{gua.difficulty.name}}</span></p>
 						</div>
 					</div>
 					<!-- Location -->
-					<div class="col col-50">
+					<div class="col">
 						<!-- Position -->				
 						<div id="guaCoordinate">
 							<p class="right" ng-repeat="coor in gua.coordinates"><i class="ion-ios7-location-outline"></i><br>S {{coor.longitude}} E {{coor.latitude}} </p>
@@ -52,11 +45,20 @@
 						</div>
 					</div>
 				</div>
-				
-				<!-- Split 2 Bottom -->
-				<div class="row responsive-sm">
+
+				<!-- Description -->
+				<div class="row">
+					<div class="col">
+						
+						<p ng-bind-html="gua.description | nl2br"></p>
+						<p ng-show="gua.description == []">No description yet...</p>	
+						<hr/>					
+					</div>
+				</div>
+								<!-- Split 2 Bottom -->
+				<div class="row">
 					<!-- Contact -->
-					<div class="col col-50">
+					<div class="col">
 						<div id="guaContact" ng-show="gua.contacts">
 							<h5>Contact</h5>
 							<div ng-repeat="contact in gua.contacts">
@@ -68,7 +70,7 @@
 					</div>
 
 					<!-- Gear -->
-					<div class="col col-50">
+					<div class="col">
 						<div id="guaGear" ng-show="gua.gears">
 							<h5 class="right">
 								Peralatan Susur
@@ -78,15 +80,6 @@
 							</ul>
 							<!-- <p class="right" ng-show="gua.gears == 0">No gear</p> -->
 						</div>
-					</div>
-				</div>
-
-				<!-- Description -->
-				<div class="row responsive-sm">
-					<div class="col col-100">
-						<hr/>
-						<p ng-bind-html="gua.description | nl2br"></p>
-						<p ng-show="gua.description == []">No description yet...</p>						
 					</div>
 				</div>
 			</div>
