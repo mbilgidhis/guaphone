@@ -359,7 +359,7 @@ GuaApp.controller('GpsCtrl', function($scope, $window, $http){
 	$scope.markerOption = {
 		options : {
           boxClass: 'custom-info-window',
-          pixelOffset: new google.maps.Size(-50,-20),
+          pixelOffset: new google.maps.Size(50,-20),
           alignBottom: true
         }
 	};

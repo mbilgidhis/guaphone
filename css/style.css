@@ -12,11 +12,12 @@
 
 body{
 	font-family: 'Tahoma', sans-serif !important;
-	color: #4ACFDD;
+	/*color: #4ACFDD;*/
 }
 body, h1,h2, h3, h4, h5{
 	font-family: 'Tahoma', sans-serif !important;
-	color: #4ACFDD;
+	/*color: #4ACFDD;*/
+	color: #fff;
 }
 
 .angular-google-map-container{ 
@@ -72,7 +73,8 @@ div[ng-repeat="gua in guas"] .col.col-100,div[ng-repeat="gua in guaviews"] .col.
 
 #listCavesArea .list,#listCavesArea .item,#listCavesArea .badge, #listMainMenu .list{
 	font-family: ;;,'Tahoma', sans-serif !important;
-	color:#4ACFDD;
+	/*color:#4ACFDD;*/
+	color: #fff;
 }
 #listCavesArea .item{
 	border-style:none;
@@ -138,7 +140,8 @@ hr{
 }
 
 #badgeJarak{
-	color: #4ACFDD !important;
+	/*color: #4ACFDD !important;*/
+	color: #fff !important;
 }
 
 /*tambahan untuk infobox */
@@ -150,7 +153,7 @@ hr{
     /*border: 1px solid white;*/
     box-shadow: 3px 3px 10px rgba(0,0,0,0.5);
     border-radius: 5px;
-    width: 200px;
+    min-width: 150px;
     margin-top: 15px;
     margin-left: -130px;
 }
@@ -174,6 +177,15 @@ hr{
     left: 118px;
 }
 /**/
-/*.scroll-content{
+.scroll-content{
   background-color:#4ACFDD;
-}*/
+}
+
+a .item, .item-icon-left{
+	background-color: #4ACFDD;
+	color: #fff;
+}
+
+#here{
+	color: #4ACFDD !important ;
+}
