@@ -478,12 +478,6 @@ GuaApp.controller('PerAreaCtrl', function($scope, $stateParams, $http, $window, 
 	var id = $stateParams.id;
 	var lat = $window.lat, lng = $window.lng;
 	var currentLocation = new google.maps.LatLng(lat, lng);
-
-	console.log(currentLocation);
-
-	if(currentLocation.B == NaN){
-		$scope.showJarak = false;
-	}
 	
 	$http({
 		url:"http://gua.antonwibisono.com/api/public/caves/province/?id="+id,
@@ -499,10 +493,20 @@ GuaApp.controller('PerAreaCtrl', function($scope, $stateParams, $http, $window, 
 		console.log("gagal");
 	});
 
+	$scope.tanda = 0;
+
 	$scope.jarak = function(a,b){
 		var areaLocation = new google.maps.LatLng(a, b);
-		return (google.maps.geometry.spherical.computeDistanceBetween(currentLocation, areaLocation) / 1000).toFixed(1);
+		var hasil = (google.maps.geometry.spherical.computeDistanceBetween(currentLocation, areaLocation) / 1000).toFixed(1);
+		if(hasil=="NaN"){
+			return "";
+			$scope.tanda = 0;
+		}else{
+			return hasil+" km";
+			$scope.tanda = 1;
+		}
 	};
+	console.log(currentLocation);
 
 });
 
