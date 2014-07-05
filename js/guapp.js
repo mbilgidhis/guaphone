@@ -479,6 +479,11 @@ GuaApp.controller('PerAreaCtrl', function($scope, $stateParams, $http, $window, 
 	var lat = $window.lat, lng = $window.lng;
 	var currentLocation = new google.maps.LatLng(lat, lng);
 
+	console.log(currentLocation);
+
+	if(currentLocation.B == NaN){
+		$scope.showJarak = false;
+	}
 	
 	$http({
 		url:"http://gua.antonwibisono.com/api/public/caves/province/?id="+id,
