@@ -27,6 +27,7 @@ body, h1,h2, h3, h4, h5{
 .right{
 	width: auto;
 	text-align: right;
+	font-size: 14px !important;
 }
 
 ul.right{
@@ -101,7 +102,7 @@ hr{
 }
 #guaCoordinate{
 	color:#fff;
-	font-size:11px;
+	font-size:12px;
 }
 #guaCoordinate p{
 	font-family: 'Helvetica', sans-serif !important;
@@ -113,11 +114,11 @@ hr{
 #guaGear h5,#guaContacts h5{
 	font-family: 'Tahoma', sans-serif !important;
 	color:#fff;
-	font-size:11px;
+	font-size:16px;
 }
 #guaGears li,#guaContacts li,#guaContacts p{
 	font-family: 'Tahoma', sans-serif !important;
-	font-size:11px !important;
+	font-size:16px !important;
 }
 #guaAddress{
 	font-family: 'Helvetica', sans-serif !important;
