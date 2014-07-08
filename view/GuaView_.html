@@ -8,7 +8,7 @@
 				<div class="col col-100">
 					<div id="pic-slider">
 						<!-- Default Picture / Static Map-->
-						<img ng-src="http://maps.googleapis.com/maps/api/staticmap?&key=AIzaSyBvkEaVRacUN8MucCU6B4YQGAT18KCmXnY&sensor=false&center={{coor.latitude}},{{coor.longitude}}&zoom=11&scale=1x&size=640x300&markers={{coor.latitude}},{{coor.longitude}}" ng-repeat="coor in gua.coordinates" ng-show="gua.images == 0" style="width:auto !important;height:410px;text-align:center;">
+						<img ng-src="http://maps.googleapis.com/maps/api/staticmap?&key=AIzaSyBvkEaVRacUN8MucCU6B4YQGAT18KCmXnY&sensor=false&center={{coor.latitude}},{{coor.longitude}}&zoom=7x&size=310x195&markers={{coor.latitude}},{{coor.longitude}}" ng-repeat="coor in gua.coordinates" ng-show="gua.images == 0" style="width:auto !important;height:410px;text-align:center;">
 
 				        <!-- masih salah -->
 				        <div ng-hide="file == 0" >
@@ -27,7 +27,7 @@
 					<div class="col">
 						<div id="guaType">
 							<!-- <p>{{gua.type.name}} <span ng-show="gua.type.name == 0"> - </span> | {{gua.difficulty.name}} <span ng-show="gua.difficulty.name == 0"> - </span></p> -->
-							<p><span ng-show="gua.type.name">{{gua.type.name}}</span><span ng-show="gua.type.name && gua.difficulty.name"> | </span><span ng-show="gua.difficulty.name">{{gua.difficulty.name}}</span></p>
+							<p><span ng-show="gua.type.name">{{gua.type.name}}</span><!-- <span ng-show="gua.type.name && gua.difficulty.name"> | </span><span ng-show="gua.difficulty.name">{{gua.difficulty.name}}</span> --></p>
 						</div>
 					</div>
 					<!-- Location -->
