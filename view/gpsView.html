@@ -1,6 +1,6 @@
 <ion-view title="'Susur Gua'" left-buttons="leftButtons">
   <ion-content has-header="true" scroll="false">
-    <google-map center="map.center" zoom="map.zoom" draggable="true">       
+    <google-map center="map.center" zoom="map.zoom" draggable="true" options="optionsMap">       
         <!-- Marker gua -->
         <marker ng-repeat="m in markers" coords="m" icon="m.icon" click="onMarkerClicked(m)">
             <window show="m.showWindow" options="markerOption.options">

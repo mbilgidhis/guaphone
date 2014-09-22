@@ -371,6 +371,13 @@ GuaApp.controller('GpsCtrl', function($scope, $window, $http){
 		marker.showWindow = true;
 	};
 
+	$scope.optionsMap = { "styles": [{
+                              "elementType": "all",
+                              "featureType": "poi",
+                              "stylers":[{"visibility":"off"}]
+          
+                                    }]
+        };
 	//untuk map
 	$scope.map = {
     	center: {
